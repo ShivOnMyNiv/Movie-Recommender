@@ -26,13 +26,13 @@ print(df.iloc[::4000000, :])
 drop_movie_list = pd.read_csv('drop_movie_list.txt', header = None, names = ['Index', 'Cust_Id', 'Rating', 'Movie_Id'], usecols = [0,1,2,3])
 drop_movie_list = drop_movie_list.drop('Index', 1)
 print(drop_movie_list.head(10))
-
+"""
 # Pivoting dataset to create a single giant matrix
 df_p = pd.pivot_table(df,values='Rating',index='Cust_Id',columns='Movie_Id')
 print(df_p.shape)
 print('-Data Examples-')
 print(df_p.iloc[::10000, :])
-
+"""
 # Importing the Movie Id to title converter
 df_title = pd.read_csv('movie_titles.csv', encoding = "ISO-8859-1", header = None, names = ['Movie_Id', 'Year', 'Name'])
 df_title.set_index('Movie_Id', inplace = True)
